@@ -8,3 +8,12 @@ spring:
     inetutils:
       preferredNetworks:
         - 192.168
+
+resilience4j:
+  retry:
+    instances:
+      throwingException:
+        maxRetryAttempts: 2
+        waitDuration: 2s
+        retryExceptions:
+          - java.lang.Exception
